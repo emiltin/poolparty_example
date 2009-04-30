@@ -4,7 +4,7 @@ pool :application do
   
   cloud :app do
     has_package "git-core"
-    has_package "libsqlite3-d ev"
+    has_package "libsqlite3-dev"
 
     has_gem_package "rails", :version => "2.3.2"
     has_gem_package "sqlite3-ruby"

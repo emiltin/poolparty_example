@@ -1,13 +1,30 @@
 
 
-Poolparty examples.
+Poolparty rails app example.
 
 
-This repo contains examples of how to use poolpartyrb.
+This repo contains an example of how to use poolparty to deploy a rails app to Amazon EC2.
 
 
 Some things you need to do first:
 
-1. Download cookbooks
-2. Setup ec2
-3. SEtup keys
+- Setup an EC2 account.
+- Setup EC2 credentials.
+- Install poolparty
+
+
+
+
+
+
+The examples was created using:
+> rails poolparty_example
+
+After that, the config/poolparty/ folder was added.
+
+
+
+Things I needed to do:
+
+- Modify environment.rb, so that RAILS_GEM_VERSION matched the has_gem_package declartion in cloud.rb
+
