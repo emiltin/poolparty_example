@@ -9,6 +9,10 @@ pool :application do
     has_gem_package "rails", :version => "2.3.2"
     has_gem_package "sqlite3-ruby"
 
+    include_chef_recipe "sqlite"
+    
+    has_file "/etc/motd", :content => "Welcome to your poolparty example instance!"
+    
     has_directory "/var/www"
     has_directory "/var/www/my_app"
     has_directory "/var/www/my_app/shared", :owner => "www-data"
@@ -24,6 +28,7 @@ production:
   pool: 5
   timeout: 5000
 '
+      mode 0644
     end
 
     has_chef_deploy "/var/www/my_app" do
@@ -32,7 +37,6 @@ production:
     end
             
     chef do
-      include_chef_recipe "sqlite"
       include_recipes "#{File.dirname(__FILE__)}/../cookbooks/*"     #will be uploaded to instances, but not run
       templates "#{File.dirname(__FILE__)}/templates/"               #will be uploaded to instances
       recipe "#{File.dirname(__FILE__)}/chef.rb"                     #will be uploaded to instances, and run 

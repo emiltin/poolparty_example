@@ -2,8 +2,10 @@
 
 Poolparty rails app example.
 
-
 This repo contains an example of how to use poolparty to deploy a rails app to Amazon EC2.
+
+
+Stack: Apache2 + Passenger + Rails + SQLLite
 
 
 Some things you need to do first:
@@ -12,6 +14,15 @@ Some things you need to do first:
 - Setup EC2 credentials.
 - Install poolparty
 
+
+
+Starting your cloud:
+
+If you installed poolparty via the gem:
+> cloud-start -s config/poolparty/clouds.rb
+
+If you installed the edge poolparty via git you need to point to the poolparty bin folder:
+> ~/poolparty/bin/cloud-start -s config/poolparty/clouds.rb
 
 
 

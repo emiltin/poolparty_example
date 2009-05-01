@@ -1,0 +1,929 @@
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-05-01 08:52:53) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 97ms (View: 10, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNotes (20090501070026)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090501070026')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("notes")[0m
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:02:53) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:03:35) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/notes_controller.rb:1
+
+Rendered rescues/_trace (83.2ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:04:38) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  
+
+Rendered rescues/_trace (22.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:04:40) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  
+
+Rendered rescues/_trace (22.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:05:45) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:05:47) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:05:49) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:06:55) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  
+
+Rendered rescues/_trace (25.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:08:14) [GET]
+
+NameError (uninitialized constant XxController):
+  
+
+Rendered rescues/_trace (79.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:08:32) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  
+
+Rendered rescues/_trace (23.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-05-01 09:09:10) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/notes_controller.rb:1
+
+Rendered rescues/_trace (26.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:10:09) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:10:24) [GET]
+Rendering application/index
+Completed in 66ms (View: 65, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:13:54) [GET]
+Rendering template within layouts/application
+Rendering application/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:13:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/default.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:15:38) [GET]
+Rendering template within layouts/application
+Rendering application/index
+  [4;36;1mNote Load (0.6ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Completed in 25ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:15:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/default.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:16:47) [GET]
+Rendering template within layouts/application
+Rendering application/index
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM "notes" [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:16:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/default.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:19:06) [GET]
+Rendering template within layouts/application
+Rendering notes/index
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-01 09:19:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/default.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:20:31) [GET]
+
+NameError (uninitialized constant NotesController::Notes):
+  app/controllers/notes_controller.rb:5:in `index'
+
+Rendered rescues/_trace (27.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:22:35) [GET]
+
+NameError (uninitialized constant NotesController::Notes):
+  app/controllers/notes_controller.rb:5:in `index'
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:22:37) [GET]
+
+NameError (uninitialized constant NotesController::Notes):
+  app/controllers/notes_controller.rb:5:in `index'
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNotes (20090501072057)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "notes" already exists: CREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNotes (20090501072057)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501072057')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("notes")[0m
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:27:30) [GET]
+
+NameError (uninitialized constant NotesController::Notes):
+  app/controllers/notes_controller.rb:5:in `index'
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNotes (20090501072927)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090501072927')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("notes")[0m
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:30:09) [GET]
+  [4;36;1mNote Load (0.5ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 229ms (View: 223, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2009-05-01 09:30:11) [GET]
+Rendering template within layouts/notes
+Rendering notes/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2009-05-01 09:31:11) [GET]
+Rendering template within layouts/notes
+Rendering notes/new
+
+ActionView::TemplateError (undefined method `label_for' for #<ActionView::Helpers::FormBuilder:0x2599078>) on line #7 of app/views/notes/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6: 	<p>
+7: 		<%= f.label_for :note %> <%= f.text_area :note %>
+8: 	</p>
+9:   <p>
+10:     <%= f.submit 'Create' %>
+
+    app/views/notes/new.html.erb:7
+    app/views/notes/new.html.erb:3
+    app/controllers/notes_controller.rb:29:in `new'
+
+Rendered rescues/_trace (132.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#new (for 127.0.0.1 at 2009-05-01 09:31:18) [GET]
+Rendering template within layouts/notes
+Rendering notes/new
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2009-05-01 09:31:27) [GET]
+Rendering template within layouts/notes
+Rendering notes/new
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2009-05-01 09:31:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"AcTL7IBvYuPjpaApYZ12xjNOzbX8XRGPw4J+lDF6H7A=", "note"=>{"note"=>""}}
+Rendering template within layouts/notes
+Rendering notes/new
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2009-05-01 09:31:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"AcTL7IBvYuPjpaApYZ12xjNOzbX8XRGPw4J+lDF6H7A=", "note"=>{"note"=>"what about ips?"}}
+  [4;35;1mNote Create (0.7ms)[0m   [0mINSERT INTO "notes" ("updated_at", "note", "created_at") VALUES('2009-05-01 07:31:37', 'what about ips?', '2009-05-01 07:31:37')[0m
+Redirected to http://localhost:3000/notes/1
+Completed in 51ms (DB: 1) | 302 Found [http://localhost/notes]
+
+
+Processing NotesController#show (for 127.0.0.1 at 2009-05-01 09:31:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/notes/1]
+
+
+Processing NotesController#show (for 127.0.0.1 at 2009-05-01 09:32:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/notes/1]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:32:08) [GET]
+  [4;36;1mNote Load (0.7ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:32:14) [GET]
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 96ms (View: 89, DB: 1) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#show (for 127.0.0.1 at 2009-05-01 09:32:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/show
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/notes/1]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:32:51) [GET]
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#show (for 127.0.0.1 at 2009-05-01 09:32:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/notes/1]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:33:04) [GET]
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+ERROR: compiling _run_erb_app47views47notes47index46html46erb RAISED compile error
+/Users/emiltin/poolparty_example/app/views/notes/index.html.erb:9: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate note.note), :length => 30 ).to_s); @output_buffer.concat "</td>\n"
+                                                                                ^
+Function body:           def _run_erb_app47views47notes47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing notes</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<table>\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "  </tr>\n"
+@output_buffer.concat "\n"
+ @notes.each do |note| ; @output_buffer.concat "\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate note.note), :length => 30 ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Show', note ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Edit', edit_note_path(note) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "  </tr>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</table>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<br />\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'New note', new_note_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/emiltin/poolparty_example/app/views/notes/index.html.erb:22:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/emiltin/poolparty_example/app/controllers/notes_controller.rb:7:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/emiltin/poolparty_example/app/views/notes/index.html.erb:9: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate note.note), :length => 30 ).to_s); @output_buffer.concat "</td>\n"
+                                                                                ^) on line #9 of app/views/notes/index.html.erb:
+6: 
+7: <% @notes.each do |note| %>
+8:   <tr>
+9:     <td><%= h(truncate note.note), :length => 30 %></td>
+10:     <td><%= link_to 'Show', note %></td>
+11:     <td><%= link_to 'Edit', edit_note_path(note) %></td>
+12:     <td><%= link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/notes/index.html.erb:22:in `compile!'
+    app/controllers/notes_controller.rb:7:in `index'
+
+Rendered rescues/_trace (52.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:33:11) [GET]
+  [4;36;1mNote Load (0.5ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+ERROR: compiling _run_erb_app47views47notes47index46html46erb RAISED compile error
+/Users/emiltin/poolparty_example/app/views/notes/index.html.erb:9: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate(note.note)), :length => 30 ).to_s); @output_buffer.concat "</td>\n"
+                                                                                 ^
+Function body:           def _run_erb_app47views47notes47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing notes</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<table>\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "  </tr>\n"
+@output_buffer.concat "\n"
+ @notes.each do |note| ; @output_buffer.concat "\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate(note.note)), :length => 30 ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Show', note ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Edit', edit_note_path(note) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "  </tr>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</table>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<br />\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'New note', new_note_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/emiltin/poolparty_example/app/views/notes/index.html.erb:22:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/emiltin/poolparty_example/app/controllers/notes_controller.rb:7:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/emiltin/poolparty_example/app/views/notes/index.html.erb:9: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate(note.note)), :length => 30 ).to_s); @output_buffer.concat "</td>\n"
+                                                                                 ^) on line #9 of app/views/notes/index.html.erb:
+6: 
+7: <% @notes.each do |note| %>
+8:   <tr>
+9:     <td><%= h(truncate(note.note)), :length => 30 %></td>
+10:     <td><%= link_to 'Show', note %></td>
+11:     <td><%= link_to 'Edit', edit_note_path(note) %></td>
+12:     <td><%= link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/notes/index.html.erb:22:in `compile!'
+    app/controllers/notes_controller.rb:7:in `index'
+
+Rendered rescues/_trace (52.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:33:21) [GET]
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+ERROR: compiling _run_erb_app47views47notes47index46html46erb RAISED compile error
+/Users/emiltin/poolparty_example/app/views/notes/index.html.erb:9: syntax error, unexpected ';', expecting ')'
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate(note.note, :length => 30) ).to_s); @output_buffer.concat "</td>\n"
+                                                                                                       ^
+Function body:           def _run_erb_app47views47notes47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing notes</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<table>\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "  </tr>\n"
+@output_buffer.concat "\n"
+ @notes.each do |note| ; @output_buffer.concat "\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate(note.note, :length => 30) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Show', note ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Edit', edit_note_path(note) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "  </tr>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</table>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<br />\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'New note', new_note_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/emiltin/poolparty_example/app/views/notes/index.html.erb:22:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/emiltin/poolparty_example/app/controllers/notes_controller.rb:7:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/emiltin/poolparty_example/app/views/notes/index.html.erb:9: syntax error, unexpected ';', expecting ')'
+@output_buffer.concat "    <td>"; @output_buffer.concat(( h(truncate(note.note, :length => 30) ).to_s); @output_buffer.concat "</td>\n"
+                                                                                                       ^) on line #9 of app/views/notes/index.html.erb:
+6: 
+7: <% @notes.each do |note| %>
+8:   <tr>
+9:     <td><%= h(truncate(note.note, :length => 30) %></td>
+10:     <td><%= link_to 'Show', note %></td>
+11:     <td><%= link_to 'Edit', edit_note_path(note) %></td>
+12:     <td><%= link_to 'Destroy', note, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/notes/index.html.erb:22:in `compile!'
+    app/controllers/notes_controller.rb:7:in `index'
+
+Rendered rescues/_trace (58.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:33:26) [GET]
+  [4;36;1mNote Load (0.5ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#edit (for 127.0.0.1 at 2009-05-01 09:33:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/edit
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/notes/1/edit]
+
+
+Processing NotesController#edit (for 127.0.0.1 at 2009-05-01 09:33:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/edit
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/notes/1/edit]
+
+
+Processing NotesController#update (for 127.0.0.1 at 2009-05-01 09:33:55) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"AcTL7IBvYuPjpaApYZ12xjNOzbX8XRGPw4J+lDF6H7A=", "id"=>"1", "note"=>{"note"=>"what about ips!?"}}
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+  [4;36;1mNote Update (0.5ms)[0m   [0;1mUPDATE "notes" SET "note" = 'what about ips!?', "updated_at" = '2009-05-01 07:33:55' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/notes/1
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/notes/1]
+
+
+Processing NotesController#show (for 127.0.0.1 at 2009-05-01 09:33:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+Rendering template within layouts/notes
+Rendering notes/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/notes/1]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:33:57) [GET]
+  [4;36;1mNote Load (0.6ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#destroy (for 127.0.0.1 at 2009-05-01 09:34:00) [DELETE]
+  Parameters: {"authenticity_token"=>"AcTL7IBvYuPjpaApYZ12xjNOzbX8XRGPw4J+lDF6H7A=", "id"=>"1"}
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 1) [0m
+  [4;36;1mNote Destroy (0.7ms)[0m   [0;1mDELETE FROM "notes" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/notes
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/notes/1]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:34:00) [GET]
+  [4;35;1mNote Load (0.9ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2009-05-01 09:34:01) [GET]
+Rendering template within layouts/notes
+Rendering notes/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2009-05-01 09:34:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"AcTL7IBvYuPjpaApYZ12xjNOzbX8XRGPw4J+lDF6H7A=", "note"=>{"note"=>"odifjio"}}
+  [4;36;1mNote Create (0.6ms)[0m   [0;1mINSERT INTO "notes" ("updated_at", "note", "created_at") VALUES('2009-05-01 07:34:04', 'odifjio', '2009-05-01 07:34:04')[0m
+Redirected to http://localhost:3000/notes/2
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/notes]
+
+
+Processing NotesController#show (for 127.0.0.1 at 2009-05-01 09:34:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 2) [0m
+Rendering template within layouts/notes
+Rendering notes/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/notes/2]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:34:06) [GET]
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing NotesController#destroy (for 127.0.0.1 at 2009-05-01 09:34:10) [DELETE]
+  Parameters: {"authenticity_token"=>"AcTL7IBvYuPjpaApYZ12xjNOzbX8XRGPw4J+lDF6H7A=", "id"=>"2"}
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM "notes" WHERE ("notes"."id" = 2) [0m
+  [4;36;1mNote Destroy (0.5ms)[0m   [0;1mDELETE FROM "notes" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/notes
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/notes/2]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:34:10) [GET]
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:34:48) [GET]
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/notes]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2009-05-01 09:35:04) [GET]
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM "notes" [0m
+Rendering template within layouts/notes
+Rendering notes/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/notes]
