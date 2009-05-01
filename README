@@ -1,17 +1,16 @@
-
-
-Poolparty rails app example.
+Poolparty example.
 
 This repo contains an example of how to use poolparty to deploy a rails app to Amazon EC2.
+The stack used is: Apache2 + Passenger + Rails + SQLite
 
-
-Stack: Apache2 + Passenger + Rails + SQLLite
+-Emil Tin
+emil@tin.dk
 
 
 Some things you need to do first:
 
 - Setup an EC2 account.
-- Setup EC2 credentials.
+- Setup AWS certificates and credentials.
 - Install poolparty
 
 
@@ -19,29 +18,24 @@ Some things you need to do first:
 Starting your cloud:
 
 If you installed poolparty via the gem:
-> cloud-start -s config/poolparty/clouds.rb
+> cloud-start
 
-If you installed the edge poolparty via git you need to point to the poolparty bin folder:
-> ~/poolparty/bin/cloud-start -s config/poolparty/clouds.rb
-
-
+If you installed the edge poolparty via git you need to point to the poolparty bin folder (wherever you keep it):
+> ~/poolparty/bin/cloud-start
 
 
 
-The examples was created using:
-> rails poolparty_example
-
-After that, the config/poolparty/ folder was added.
+The poolparty configuration files are stored in config/poolparty/
 
 
 
-Things I needed to do:
 
+
+
+Things I needed to do to get this example working:
 - Modify environment.rb, so that RAILS_GEM_VERSION matched the has_gem_package declartion in cloud.rb
 
 
-- fix outdated rake on instance. the problem is that the 0.8.4 gem installed, but the older 0.8.1 is isntalled as a package.
-first remove the package:
-> apt-get remove rake
-then symlink:
-> ln -s /usr/lib/ruby/gems/1.8/gems/rake-0.8.4/bin/rake /usr/bin/rake
+Known problems:
+- rake db:migrate fails on the instance with an error: rake aborted! undefined method `reenable' for <Rake::Task db:schema:dump => [environment]>:Rake::Task
+
