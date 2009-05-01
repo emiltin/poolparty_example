@@ -39,3 +39,9 @@ Things I needed to do:
 
 - Modify environment.rb, so that RAILS_GEM_VERSION matched the has_gem_package declartion in cloud.rb
 
+
+- fix outdated rake on instance. the problem is that the 0.8.4 gem installed, but the older 0.8.1 is isntalled as a package.
+first remove the package:
+> apt-get remove rake
+then symlink:
+> ln -s /usr/lib/ruby/gems/1.8/gems/rake-0.8.4/bin/rake /usr/bin/rake
