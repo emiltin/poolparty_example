@@ -1,17 +1,17 @@
-require "poolparty-extensions"
+require "poolparty-extensions"      #you must have the auser-poolparty-extensions gem installed
 
 pool :application do
   instances 1
-  keypair "~/.ec2/testpair"
+  keypair "~/.ec2/testpair"       #you need to modify this to point to your EC2 key file
 
   cloud :app do
-    has_package "libsqlite3-dev"
+    enable :mysql
     has_gem_package "rails", :version => "2.3.2"
-    has_gem_package "sqlite3-ruby"
-    include_chef_recipe "sqlite"
+    has_gem_package "mysql"
 
-    has_file "/etc/motd", :content => "Welcome to your poolparty example instance!"
-
+    has_file "/etc/motd", :content => "Welcome to your poolparty example instance!"   #login welcome message
+    has_exec "updatedb"                  #make the locate command work
+    
     #includes the git-core package, and apache and mod_rails chef recipes
     has_rails_deploy "my_app" do
       dir "/var/www"
@@ -25,7 +25,7 @@ pool :application do
       templates "#{File.dirname(__FILE__)}/templates/"               #will be uploaded to instances
       recipe "#{File.dirname(__FILE__)}/chef.rb"                     #will be uploaded to instances, and run 
     end    
-
+    
   end
 
 end

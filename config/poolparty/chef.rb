@@ -1,7 +1,7 @@
-node[:apache][:dir] = "/etc/apache2"
-include_recipe "apache2"
-include_recipe "passenger"
-include_recipe "sqlite"
+#node[:apache][:dir] = "/etc/apache2"
+#include_recipe "apache2"
+#include_recipe "passenger"
+#include_recipe "mysql"
   
 web_app "my_app" do
   docroot "/var/www/my_app/current/public"
