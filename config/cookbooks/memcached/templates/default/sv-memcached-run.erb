@@ -1,3 +1,0 @@
-#!/bin/sh
-exec 2>&1
-exec chpst -u <%= @params[:options][:user] %> /usr/bin/memcached -v -m <%= @params[:options][:memory] %> -p <%= @params[:options][:port] %>
