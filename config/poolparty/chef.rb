@@ -1,4 +1,4 @@
-include_recipe "mysql::server"
+#include_recipe "mysql::server"
 
 #web_app sets up passenger and theapache virtual host
 web_app "my_app" do

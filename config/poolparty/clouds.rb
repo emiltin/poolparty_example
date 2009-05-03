@@ -7,11 +7,14 @@ pool :application do
   cloud :app do
     has_gem_package "rails", :version => "2.3.2"
     has_gem_package "mysql"
+    has_package "mysql-client"
+    has_package "mysql-server"
+    has_service "mysql"
 
     has_file "/etc/motd", :content => "Welcome to your poolparty example instance!"   #login welcome message
-    has_exec "updatedb"                  #make the command line 'locate' tool work
+    has_exec "updatedb"                                                               #make the command line 'locate' tool work
     
-    #includes the git-core package, and apache and mod_rails chef recipes
+    #deploy our rails app using apache + mod_rails/passenger
     has_rails_deploy "my_app" do
       dir "/var/www"
       repo "git://github.com/emiltin/poolparty_example.git"

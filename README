@@ -37,5 +37,7 @@ Things I needed to do to get this example working:
 
 
 Known problems:
-- rake db:migrate fails on the instance with an error: rake aborted! undefined method `reenable' for <Rake::Task db:schema:dump => [environment]>:Rake::Task
+- rake db:migrate fails on the instance with an error: rake aborted! undefined method `reenable' for <Rake::Task db:schema:dump => [environment]>:Rake::Task [seems not to occur anymore?]
+
+-when using mysql as the db, the migration command fails because rake db:create isn't called initially to setup the db.
 
