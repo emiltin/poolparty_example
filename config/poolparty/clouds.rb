@@ -5,21 +5,21 @@ pool :application do
   keypair "~/.ec2/testpair"       #you need to modify this to point to your EC2 key file
 
   cloud :app do
-    has_gem_package "rails", :version => "2.3.2"
+    has_gem_package "rails", :version => "2.3.2"    #must match the version specified in the rails environment.rb
     has_package "mysql-client"
-    has_package "mysql-server"
-    has_gem_package "mysql"
-    has_service "mysql"
+    has_package "mysql-server"            #mysql server installation
+    has_package "libmysqlclient15-dev"    #so we can install the mysql gem
+    has_gem_package "mysql"               #so rails can talk to mysql
+    has_service "mysql"                   #run the mysql server
 
-    has_file "/etc/motd", :content => "Welcome to your poolparty example instance!"   #login welcome message
-    has_exec "updatedb"                                                               #make the command line 'locate' tool work
+    has_file "/etc/motd", :content => "Welcome!"                    #login message (message-of-the-day)
+    has_exec "updatedb"                                             #make the command line 'locate' tool work
     
-    #deploy our rails app using apache + mod_rails/passenger
-    has_rails_deploy "my_app" do
+    has_rails_deploy "my_app" do                                    #deploy our rails app using apache + mod_rails/passenger  
       dir "/var/www"
-      repo "git://github.com/emiltin/poolparty_example.git"
+      repo "git://github.com/emiltin/poolparty_example.git"         #download rails app from this repo
       user "www-data"
-      database_yml "#{File.dirname(__FILE__)}/../database.yml"
+      database_yml "#{File.dirname(__FILE__)}/../database.yml"      #will copy it to the shared folder
     end
 
     chef do
