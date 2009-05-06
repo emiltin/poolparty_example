@@ -1,0 +1,296 @@
+
+#tasks for managing ec2 instance clusters
+#image_id_32_bit is defined in the ec2onrails gem, and contains the ec2rails amazon machine id
+
+#TODO
+#need to automatically remove machine from list of know host when killing instances, or we can get errors later
+
+#the database will still be called webapp_production, even when the rails environment is something else. if we want
+#to change this we need to override ec2onrails cap tasks, since they assume the production name when creating the db
+
+
+
+require 'lib/ec2cluster'
+require 'net/ssh'
+require 'pp'
+
+#run a command locally, and throw an exception if there was any errors. output is the output of the command run
+def locally( command )
+  result = `#{command}`
+  raise("error: #{$?}") if ($?.to_i)>0
+  result
+end
+
+def cluster_file_path
+  stage = fetch(:stage ).to_s
+  path=File.join( locally("pwd").chomp, "tmp/clusters/#{stage}.yml")
+end
+
+
+
+Capistrano::Configuration.instance(:must_exist).load do
+
+
+
+  desc <<-DESC
+  Load ec2 server address from yml file, and setup capistrano roles.
+  DESC
+  task :after_ensure do       #:ensure is part of the multistage capistrano extension, and sets the stage
+    cluster = EC2Cluster.new( cluster_file_path )
+    if cluster.instances
+      [:web,:app,:db].each do |r|
+        a = cluster.addresses_for_role(r)
+        if a
+          a << { :primary => true } if r==:db     #TODO won't work when we have more than one instance with db role
+          puts "[#{r.inspect}] set to #{a.inspect}" 
+          role r, *a
+          make_admin_role_for r
+        else
+          puts " [#{r.inspect}] not set!"
+        end
+      end
+
+      stage = fetch(:stage).to_s
+    else
+      puts 'Cluster file is empty.'
+    end
+
+    #rails_env controls what environment to use when running db migrations
+    set :rails_env, stage.to_s
+  end
+
+
+
+  namespace :deploy do
+
+    desc <<-DESC
+    DESC
+    task :after_update_code do
+      upload_db_config
+      upload_mongrel_config
+    end
+
+    desc <<-DESC
+    Upload a modified version of database.yml to the app servers, where host points to the primary db server.
+    Assumes current stage indicates the environment to modify settings for.
+    DESC
+    task :upload_db_config, :roles => :app do
+      config = YAML.load_file( File.join( locally("pwd").chomp, "config/database.yml") )
+      c = EC2Cluster.new(cluster_file_path)
+      config[stage.to_s]['host'] = c.db_primary_address
+      put YAML.dump( config ), "#{release_path}/config/database.yml" 
+    end
+
+    desc <<-DESC
+    Upload a modified version of mongrel_cluster.yml to the app servers, using current stage as environment
+    DESC
+    task :upload_mongrel_config, :roles => :app_admin do
+      config = YAML.load_file( File.join( locally("pwd").chomp, "config/mongrel_cluster.yml") )
+      config['environment'] = stage.to_s
+      pp config
+      c = EC2Cluster.new(cluster_file_path)
+      path = "/etc/mongrel_cluster/app.yml" #this path is part of the ec2onrails setup
+      sudo "chmod ugo+w #{path}"
+      put YAML.dump( config ), path          
+    end
+
+
+  end
+
+
+
+  namespace :cluster do
+
+
+    desc <<-DESC
+    Build, boot and launch cluster, and setup dns. 
+    DESC
+    task :all_steps do
+      cluster.init
+      cluster.boot
+      cluster.launch
+      dns.update
+    end
+
+
+    desc <<-DESC
+    Build cluster file, but don't boot yet.
+    2 app instances, 1 database instance.
+    DESC
+    task :init, :roles => :app do
+      puts 'Building cluster file....'
+      c = EC2Cluster.new(cluster_file_path)
+      c.clear
+
+      #describe cluster by adding instances. they will not be booted yet
+      #FIXME you can currently only add one db instance, or roles will break because of the primary option
+      c.add_instance( image_id_32_bit, [:web,:app,:db], :primary => true )
+ 
+#      c.add_instance( image_id_32_bit, [:web,:app] )
+#      c.add_instance( image_id_32_bit, [:web,:app] )
+#      c.add_instance( image_id_32_bit, [:db], :primary => true )
+      c.save
+      puts '--------'
+      c.report
+      puts 'OK'
+    end
+
+
+    desc <<-DESC
+    Load ec2 server address from yml file, and setup capistrano roles.
+    DESC
+    task :roles do       #:ensure is part of the multistage capistrano extension, and sets the stage
+      #will be displayed by after_ensure
+    end
+
+    desc <<-DESC
+    Read cluster file and show content.
+    DESC
+    task :info, :roles => :app do
+      cluster = EC2Cluster.new( cluster_file_path )
+      puts '---------'
+      printf 'Loading cluster file... '
+      cluster.report
+      puts 'OK'
+    end
+
+    desc <<-DESC
+    Check the status off all instances.
+    DESC
+    task :check, :roles => :app do
+      cluster = EC2Cluster.new( cluster_file_path )
+      puts '---------'
+      cluster.reload_info
+      cluster.report
+      puts 'OK'
+    end
+
+
+    desc <<-DESC
+    Boot cluster. Will skip already running instances.
+    DESC
+    task :boot, :roles => :app do
+      c = EC2Cluster.new(cluster_file_path)
+      c.reload_info
+      c.boot
+      cluster
+    end
+
+    desc <<-DESC
+    Perform a cold deploy of the cluster.
+    DESC
+    task :launch do
+      ec2onrails.setup
+      ec2onrails.db.set_root_password
+      deploy.cold
+      dns.update
+    end
+
+
+    desc <<-DESC
+    Kill the cluster. Please be careful.
+    DESC
+    task :kill, :roles => :app do
+      raise "Sorry, but killing the production cluster is not allowed!" if stage.to_s=="production"
+      cluster = EC2Cluster.new(cluster_file_path)
+      cluster.kill
+      cluster.delete
+    end
+
+
+
+    desc <<-DESC
+    Add an server to the cluster with roles [app web].
+    DESC
+    task :add_app_instance, :roles => :app do
+      c = EC2Cluster.new(cluster_file_path)
+      i = EC2Instance.new(image_id_32_bit,[:web,:app] )
+      c.add( i )
+      i.boot
+      i.await_running
+      c.await_network
+      c.reload_info
+      c.save
+
+      cluster
+      puts "Instance #{i.address} added."
+      puts "To launch instance, use: cap <stage> launch HOSTS=#{i.address}"
+      puts "To remove instance, use: cap <stage> remove_instance HOSTS=#{i.address}"
+      puts "OK"
+    end
+
+    desc <<-DESC
+    Remove an instance from cluster. Use must specify the address using HOSTS=<address>
+    DESC
+    task :remove_instance, :roles => :app do
+      raise 'You must specify servers using HOST=<address>' unless ENV['HOSTS']
+      c = EC2Cluster.new(cluster_file_path)
+      c.remove_instance( ENV['HOSTS'] )
+      cluster
+    end
+
+    desc <<-DESC
+    Find ip address of web servers
+    DESC
+    task :web_ips, :roles => :web do
+      #simple extract ip from amazon address name - FIXME is robust? can we safely assume the ip matches the address name?
+      c = EC2Cluster.new(cluster_file_path)
+      puts c.ips_for_role( :web )
+
+      #alternative 1 - query aws info server
+      #-s is silent mode. 169.254.169.254 is an aws server which can be queried for info about the instance sending the request
+      #      result = []
+      #      run "curl -s http://169.254.169.254/latest/meta-data/public-ipv4" do |channel, stream, data|
+      #        result << {channel[:host] => data }
+      #        break if stream == :err    
+      #      end
+      #      for r in result
+      #        r.each { |k,v| puts "#{v} (#{k})" }
+      #      end
+
+      #alternative 2 - run arp locally
+      #      c = EC2Cluster.new(cluster_file_path)
+      #      ips = c.ips_for_role(:web)
+      #      puts "Public IP adddresses for web servers: #{ips.inspect}"
+    end
+
+
+  end
+
+  namespace :dns do
+
+    desc <<-DESC
+    Upload dns.yml to the web servers, containing list of address/updatekey pairs
+    DESC
+    task :upload_config, :roles => :web do
+      c = EC2Cluster.new(cluster_file_path)
+      config = c.get_dns_config
+      put YAML.dump( config ), "#{current_path}/config/dns.yml"            
+    end
+
+    desc <<-DESC
+    Update dynanic DNS A-entries at freedns.afraid.org.
+    Each server contacts the dns server and passes key that identifies the entry to be updated.
+    The entry will then be set to point to the ip of the server requsting the update.
+    This means each server must send a different key. The way we do it is to first upload the file dns.yml,
+    which contains a list of address/key pairs. We then run the update_dns script on all the web servers,
+    which will look up the key according to the servers own address.
+    DESC
+    task :update, :roles => :web do
+      freedns_keys = YAML.load_file( File.join( locally("pwd").chomp, "config/freedns.yml") )
+      c = EC2Cluster.new(cluster_file_path)
+      printf 'Assigning freedns keys to web servers...'
+      c.assign_dns freedns_keys[stage.to_s]
+      puts 'ok'
+      c.save
+      upload_config
+
+      run "cd #{current_path}"
+      run "#{current_path}/script/update_dns"
+      puts "DNS server updated. Note that changes might take a while to spread across the net."          
+    end
+
+  end
+
+
+end

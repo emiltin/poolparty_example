@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/!svn/ver/1064/webapp/trunk/webapp/config/recipes
+END
+clusters.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/1064/webapp/trunk/webapp/config/recipes/clusters.rb
+END
+dns.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/!svn/ver/918/webapp/trunk/webapp/config/recipes/dns.rb
+END
+logs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/917/webapp/trunk/webapp/config/recipes/logs.rb
+END
