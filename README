@@ -26,18 +26,3 @@ If you installed the edge poolparty via git you need to point to the poolparty b
 
 
 The poolparty configuration files are stored in config/poolparty/
-
-
-
-
-
-
-Things I needed to do to get this example working:
-- Modify environment.rb, so that RAILS_GEM_VERSION matched the has_gem_package declartion in cloud.rb
-
-
-Known problems:
-- rake db:migrate fails on the instance with an error: rake aborted! undefined method `reenable' for <Rake::Task db:schema:dump => [environment]>:Rake::Task [seems not to occur anymore?]
-
--when using mysql as the db, the migration command fails because rake db:create isn't called initially to setup the db.
-

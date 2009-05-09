@@ -28,8 +28,6 @@ pool :application do
       repo "git://github.com/emiltin/poolparty_example.git"         #download rails app from this repo
       user "www-data"
       database_yml "#{File.dirname(__FILE__)}/../database.yml"      #will copy it to the shared folder
-      
-      
     end
 
     chef do
