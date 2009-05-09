@@ -17,6 +17,10 @@ pool :application do
       repo "git://github.com/emiltin/poolparty_example.git"         #download rails app from this repo
       user "www-data"
       database_yml "#{File.dirname(__FILE__)}/../database.yml"      #will copy it to the shared folder
+      
+      
+      #the problem with this is that rails_deploy doesn't currently pass on the migration_command to chef_deploy...
+      migration_command "rake db:create && RAILS_ENV=production rake db:migrate"
     end
 
     chef do
